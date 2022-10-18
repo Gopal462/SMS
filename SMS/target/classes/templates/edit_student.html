@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymwleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Student</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" th:href="@{/students}">Student Management</a>
+    </div>
+  </div>
+</nav>
+<br>
+    <br>           
+  <div class="container">
+  <div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+   <h1 class="text-center">Edit Student</h1>
+   <div class="card-body">
+   <form th:action="@{/students/{id}(id=${student.id})}" th:object="${student}" method="POST">
+   <div class="form-group">
+   <label>Student First Name</label>
+   <input type="text"
+   name="firstName"
+   th:field="*{firstName}"
+   class="form-control"
+   placeholder="Enter First Name"/>
+   </div>
+    <div class="form-group">
+   <label>Student Last Name</label>
+   <input type="text"
+   name="lastName"
+   th:field="*{lastName}"
+   class="form-control"
+   placeholder="Enter Last Name"/>
+   </div>
+    <div class="form-group">
+   <label>Student Email</label>
+   <input type="text"
+   name="email"
+   th:field="*{email}"
+   class="form-control"
+   placeholder="Enter Email"/>
+   </div>
+   <div class="box-footer">
+   <button type="submit" class="btn btn-primary">
+   Submit
+   </button>
+   </div>
+   </form>
+   </div>
+  </div>
+  </div>
+  </div>
+</body>
+</html>
